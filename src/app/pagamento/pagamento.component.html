@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="container-nota">
+        <div class="container-nome">
+            <div class="nome">
+                WebLanche
+            </div>
+        </div>
+        <div class="container-valor-pagamento">
+            <div class="message-valor-pagamento">Valor</div>
+            <div class="valor-pagamento">{{ valor | currency: 'BRL' }}</div>
+        </div>
+        <div class="container-pagamento">
+            <button class="btn-pagamento" (click)="pagar('Boleto Bancário')">Boleto Bancário</button>
+            <button class="btn-pagamento" (click)="pagar('Dinheiro')">Dinheiro</button>
+            <button class="btn-pagamento" (click)="pagar('Cartão de Crédito')">Cartão de Crédito</button>
+            <button class="btn-pagamento" (click)="pagar('Cartão de Débito')">Cartão de Débito</button>
+        </div>
+        <div class="container-bottom-pagamento">
+            <button class="voltar small" (click)="voltar()">Voltar</button>
+        </div>
+    </div>
+</div>

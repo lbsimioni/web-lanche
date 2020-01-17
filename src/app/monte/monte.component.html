@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="container-cardapio">
+        <form class="container-ingredientes" [formGroup]="form">
+            <div *ngFor="let i of ing; let j = index" class="lanche">
+                <div class="ingredientes-infos">
+                    <div class="ingrediente-name">
+                        {{ name(i[0]) }}
+                    </div>
+                </div>
+        
+                <div class="ingrediente-preco">
+                    {{ i[1] | currency: 'BRL' }}
+                </div>
+
+                <div class="ingrediente-qtd">
+                    <input class="input-qtd" type="number" 
+                    placeholder="0"
+                    [formControlName]="j">
+                </div>
+            </div>
+        
+            <div class="container-regras">
+                <div *ngFor="let r of lstRegras" class="regra">
+                    <div class="regra-name">
+                        {{ r[0] }}
+                    </div>
+                    <div class="regra-desc">
+                        {{ r[1] }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-valor">
+                <div class="valor">
+                    <label>Valor: </label>
+                    <div class="input-valor">
+                        {{ total | currency: 'BRL' }}
+                    </div>
+                </div>
+                <div class="container-button-valor">
+                    <button type="button" class="button-valor" (click)="comprar()">Comprar</button>
+                </div>
+            </div>
+        </form>
+        <div class="container-novo">
+            <div class="container-button-novo">
+                <button type="button" [disabled]="this.form.durty" class="button-novo" (click)="cardapio()">Cardápio</button>
+            </div>
+        </div>
+    </div>
+</div>

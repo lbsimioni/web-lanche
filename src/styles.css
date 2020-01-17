@@ -1,1 +1,342 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-cardapio {
+    width: 80%;
+    height: 80%;
+    padding: 2%;
+    border: 1px solid black;
+    display: inline-flex;
+}
+
+@media(max-width: 800px) {
+    .container-cardapio {
+        width: 100%;
+        border: transparent;
+        display: block;
+        position: absolute;
+        top: 0;
+    }
+
+    .container-lanches, .container-novo, .container-ingredientes {
+        width: 90% !important;
+        height: auto !important;
+        padding: 5%;
+        border: transparent !important;
+    }
+
+    .container-nota {
+        width: 90% !important;
+        padding: 5%;
+    }
+}
+
+.container-lanches, .container-novo, .container-ingredientes {
+    height: 100%;
+    width: 49%;
+    margin: 1%;
+}
+
+.container-lanches, .container-ingredientes {
+    display: block;
+    border-right: 1px solid black;
+    padding-right: 1%;
+}
+
+.lanche {
+    width: 100%;
+    display: inline-flex;
+    margin-bottom: 2%;
+    border-bottom: .5px solid gray;
+    padding-left: .5%;
+}
+
+.lanche-infos {
+    width: 60%;
+    display: block;
+}
+
+.lanche-name, .ingrediente-name {
+    font-weight: bold;
+    font-size: large;
+}
+
+.lanche-ingredientes {
+    padding-left: 4%;
+    font-size: medium;
+}
+
+.lanche-preco, .ingrediente-preco, .ingrediente-qtd, .container-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    text-align: right;
+    width: 20%;
+}
+
+.container-button-novo {
+    width: 100%;
+    text-align: center;
+}
+
+.button-novo {
+    width: 80%;
+    height: 40px;
+    font-weight: bold;
+    font-size: large;
+    border: transparent;
+    cursor: pointer;
+}
+
+.button-novo:hover {
+    background-color: #999999;
+    color: white;
+}
+
+.ingredientes-infos {
+    width: 60%;
+    display: block;
+}
+
+.input-qtd {
+    width: 40%;
+    padding: 1%;
+    text-align: center;
+    margin-bottom: 4%;
+}
+
+.ingrediente-qtd {
+    text-align: right !important;
+}
+
+.container-regras {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.regra {
+    display: block;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.regra-name {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: .5%;
+}
+
+.regra-desc {
+    font-size: medium;
+    padding-left: 2%;
+    text-indent: 2%;
+}
+
+.container-valor {
+    width: 100%;
+    display: inline-flex;
+}
+
+.valor {
+    width: 70%;
+    display: inline-flex;
+}
+
+label {
+    width: 30%;
+    font-size: large;
+    font-weight: bold;
+}
+
+.input-valor {
+    width: 70%;
+    height: 30px;
+    text-align: right;
+    padding-right: 5%;
+    font-size: large;
+}
+
+.container-button-valor {
+    width: 30%;
+    text-align: right;
+}
+
+.button-valor {
+    width: 100%;
+    height: 30px;
+    font-weight: bold;
+    font-size: medium;
+    border: transparent;
+    cursor: pointer;
+}
+
+.button-valor:hover {
+    background-color: green;
+    color: white;
+}
+
+.container-nota {
+    width: 60%;
+    height: 90%;
+    border: 1px solid black;
+    padding: 1%;
+}
+
+.container-nome {
+    width: 100%;
+    margin-bottom: 5%;
+    text-align: center;
+    border-bottom: .5px solid gray;
+}
+
+.nome {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+tr, td, th {
+    border: .5px solid gray;
+    padding: .4%;
+    padding-left: 1%;
+    margin: 0 !important;
+    text-align: left;
+}
+
+th {
+    font-weight: bold;
+}
+
+.container-valor {
+    width: 98.4%;
+    border: .5px solid gray;
+    padding: .4%;
+    padding-left: 1%;
+}
+
+.name-valor {
+    font-weight: bold;
+    width: 90%;
+}
+
+.total {
+    text-align: right;
+    font-weight: bold;
+}
+
+.container-bottom {
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.voltar {
+    width: 49%;
+    height: 200px;
+    margin-right: 1%;
+    font-size: xx-large;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border: transparent;
+}
+
+.voltar:hover {
+    background-color: rgba(255, 0, 0, .6);
+    color: black;
+}
+
+.pagar {
+    width: 49%;
+    height: 200px;
+    margin-right: 1%;
+    font-size: xx-large;
+    font-weight: bold;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    border: transparent;
+}
+
+.pagar:hover, .btn-comprar:hover {
+    background-color: rgba(0, 255, 0, .6);
+    color: black;
+}
+
+.btn-comprar {
+    width: 100%;
+    height: 90%;
+    margin-bottom: 5%;
+    background-color: green;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    border: transparent;
+}
+
+.container-pagamento {
+    width: 100%;
+	display: grid;
+	grid-template-columns: 49% 49%;
+  	grid-row: auto auto;
+  	grid-column-gap: 2%;
+    grid-row-gap: 2%;
+    text-align: center;
+}
+
+.btn-pagamento {
+    width: 100%;
+    height: 150px;
+    font-size: xx-large;
+    font-weight: bold;
+    cursor: pointer;
+    border: transparent;
+}
+
+.container-valor-pagamento {
+    width: 100%;
+    text-align: center;
+    margin-top: -2%;
+    margin-bottom: 2%;
+}
+
+.message-valor-pagamento {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.valor-pagamento {
+    font-size: xx-large;
+    font-weight: bold;
+    color: green;
+}
+
+.small {
+    height: 40px !important;
+    width: 200px !important;
+    font-size: medium !important;
+}
+
+.container-bottom-pagamento {
+    position: absolute;
+    bottom: 5%;
+}

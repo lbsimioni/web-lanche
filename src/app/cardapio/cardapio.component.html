@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="container-cardapio">
+        <div class="container-lanches">
+            <div *ngFor="let l of lstLanches" class="lanche">
+                <div class="lanche-infos">
+                    <div class="lanche-name">
+                        {{ l[0] }}
+                    </div>
+                    <div class="lanche-ingredientes">
+                        {{ gerarIngredientes(l[1]) }}
+                    </div>
+                </div>
+
+                <div class="lanche-preco">
+                    {{ calcular(l[1]) | currency: 'BRL' }}
+                </div>
+
+                <div class="container-btn">
+                    <button class="btn-comprar" type="button"
+                    (click)="comprar(l[1])">Comprar</button>
+                </div>
+            </div>
+            
+        </div>
+        <div class="container-novo">
+            <div class="container-button-novo">
+                <button type="button" class="button-novo"
+                (click)="personalizar()">Personalizar</button>
+            </div>
+        </div>
+    </div>
+</div>

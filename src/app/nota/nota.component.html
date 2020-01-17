@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="container-nota">
+        <div class="container-nome">
+            <div class="nome">
+                WebLanche
+            </div>
+        </div>
+        <div class="ingredientes">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Valor Unid.</th>
+                        <th>Quantidade</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of lst">
+                        <th>{{ name(i[0]) }}</th>
+                        <th>{{ ing[i[0]][1] | currency: 'BRL' }}</th>
+                        <th>{{ i[1] }}</th>
+                        <th>{{ calcular([[i[0], i[1]]]) | currency: 'BRL' }}</th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="container-valor">
+                <div class="name-valor">
+                    Deconto:
+                </div>
+                <div class="total">
+                    {{ calcularDesconto() | currency: 'BRL' }}
+                </div>
+            </div>
+            <div class="container-valor">
+                <div class="name-valor">
+                    Valor Final:
+                </div>
+                <div class="total">
+                    {{ calcular() | currency: 'BRL' }}
+                </div>
+            </div>
+        </div>
+        <div class="container-bottom">
+            <button class="voltar" (click)="voltar()">Voltar</button>
+            <button class="pagar" (click)="pagar()">Pagar</button>
+        </div>
+    </div>
+</div>
