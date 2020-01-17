@@ -57,7 +57,7 @@
 .lanche {
     width: 100%;
     display: inline-flex;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     border-bottom: .5px solid gray;
     padding-left: .5%;
 }
@@ -339,4 +339,10 @@ th {
 .container-bottom-pagamento {
     position: absolute;
     bottom: 5%;
+}
+
+.nome-hist {
+    font-weight: bold;
+    margin-bottom: 3%;
+    font-size: x-large;
 }

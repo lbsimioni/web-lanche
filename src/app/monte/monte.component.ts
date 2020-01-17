@@ -1,3 +1,4 @@
+import { isString } from 'util';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -75,6 +76,14 @@ export class MonteComponent implements OnInit {
         let lst = this.gerarLst();
         if (lst.length > 0) {
             localStorage['pedido'] = lst.toString();
+
+            let msg: string = "";
+
+            if ((isString(localStorage['historicoPedidos'])) && (localStorage['historicoPedidos'] !== '')) {
+                msg += localStorage['historicoPedidos'];
+            }
+
+            localStorage['historicoPedidos'] = lst.toString() + ',/,' + msg;
             localStorage['local'] = '1';
             this.router.navigate([this.rotaNota]);
         } else {

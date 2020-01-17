@@ -27,7 +27,6 @@ export class NotaComponent implements OnInit {
     ngOnInit() {
         this.pedido = localStorage['pedido'];
         this.arrumarArray();
-        console.log(localStorage['local']);
     }
 
     arrumarArray(): void {

@@ -1,6 +1,7 @@
 <div class="container">
     <div class="container-cardapio">
         <div class="container-lanches">
+            <div class="nome-hist">Cardápio</div>
             <div *ngFor="let l of lstLanches" class="lanche">
                 <div class="lanche-infos">
                     <div class="lanche-name">
@@ -20,6 +21,31 @@
                     (click)="comprar(l[1])">Comprar</button>
                 </div>
             </div>
+
+            <div *ngIf="exists()">
+                <div class="nome-hist">Histórico de Pedidos</div>
+                
+                <div *ngFor="let l of historico" class="lanche">
+                    <div class="lanche-infos">
+                        <div class="lanche-name">
+                            Personalizado
+                        </div>
+                        <div class="lanche-ingredientes">
+                            {{ gerarIngredientes(l) }}
+                        </div>
+                    </div>
+                
+                    <div class="lanche-preco">
+                        {{ calcular(l) | currency: 'BRL' }}
+                    </div>
+                
+                    <div class="container-btn">
+                        <button class="btn-comprar" type="button" (click)="comprar(l)">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+                
             
         </div>
         <div class="container-novo">
