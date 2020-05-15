@@ -113,8 +113,13 @@
               "devServerTarget": "web-lanche:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "web-lanche"
 }
