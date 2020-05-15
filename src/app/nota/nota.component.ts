@@ -10,14 +10,14 @@ import { CalculoService, INGREDIENTES } from '../shared';
 })
 export class NotaComponent implements OnInit {
 
-    private ing = INGREDIENTES;
+    ing = INGREDIENTES;
 
-    private readonly rotaCardapio: string = 'cardapio';
-    private readonly rotaMonte = 'monte';
-    private readonly rotaPagar: string = 'pagamento';
+    readonly rotaCardapio: string = 'cardapio';
+    readonly rotaMonte: string = 'monte';
+    readonly rotaPagar: string = 'pagamento';
 
-    private pedido: any;
-    private lst: any[][] = [];
+    pedido: any;
+    lst: any[][] = [];
 
     constructor(
         private service: CalculoService,

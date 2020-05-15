@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
 })
 export class PagamentoComponent implements OnInit {
 
-    private readonly rotaNota = 'nota';
+    private readonly rotaNota: string = 'nota';
 
-    private valor:number = 0;
+    valor: number = 0;
 
     constructor(
         private router: Router

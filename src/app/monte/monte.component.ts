@@ -14,15 +14,15 @@ export class MonteComponent implements OnInit {
 
     form: FormGroup;
 
-    private readonly ing = INGREDIENTES;
-    private readonly lstRegras = REGRAS;
+    readonly ing = INGREDIENTES;
+    readonly lstRegras = REGRAS;
 
-    private readonly rotaCardapio = 'cardapio';
-    private readonly rotaNota = 'nota';
+    readonly rotaCardapio: string = 'cardapio';
+    readonly rotaNota: string = 'nota';
 
-    private total = 0;
+    total = 0;
 
-    private qtd: any[][];
+    qtd: any[][];
 
     constructor(
         private service: CalculoService,

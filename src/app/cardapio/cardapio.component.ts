@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { CalculoService, INGREDIENTES} from '../shared';
-import { isString, isNull, isArray } from 'util';
+import { isString, isArray } from 'util';
 
 @Component({
   selector: 'app-cardapio',
@@ -11,14 +11,14 @@ import { isString, isNull, isArray } from 'util';
 })
 export class CardapioComponent implements OnInit {
 
-    private readonly ing = INGREDIENTES;
-    private readonly rotaNota = 'nota';
-    private readonly rotaMonte = 'monte';
-    private historico: any[][][] = [];
+    readonly ing = INGREDIENTES;
+    readonly rotaNota: string = 'nota';
+    readonly rotaMonte: string = 'monte';
+    historico: any[][][] = [];
 
-    private readonly lstLanches: string[][] = [['X-Bacon', '0'], ['X-Burger', '1'], ['X-Egg', '2'], ['X-Egg Bacon', '3']];
+    readonly lstLanches: string[][] = [['X-Bacon', '0'], ['X-Burger', '1'], ['X-Egg', '2'], ['X-Egg Bacon', '3']];
 
-    private readonly conjIngredientes: any[][][] = [[['0', 1], ['1', 1], ['2', 1]], [['1', 1], ['2', 1]], [['3', 1], ['1', 1], ['2', 1]], [['3', 1], ['0', 1], ['1', 1], ['2', 1]]];
+    readonly conjIngredientes: any[][][] = [[['0', 1], ['1', 1], ['2', 1]], [['1', 1], ['2', 1]], [['3', 1], ['1', 1], ['2', 1]], [['3', 1], ['0', 1], ['1', 1], ['2', 1]]];
 
     constructor(
         private service: CalculoService,
